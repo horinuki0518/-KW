@@ -1,4 +1,8 @@
    <style>
+        /* =====================================================
+           UI改善: 全体的な美しさ・見やすさの底上げ
+           ===================================================== */
+        
         /* 下部エリアの見た目は最小だけ。自由に変えてOK */
         .sync-slot-wrap {
             width: 100%;
@@ -21,6 +25,317 @@
         }
 
         /* 初期はpreを表示、inは非表示（JSのshowTabが上書きします） */
+
+        /* =====================================================
+           ボタンの派手なアニメーション
+           ===================================================== */
+        
+        /* CTAボタン共通: 押しやすさ向上 */
+        #ranking-scope a.btn,
+        #ranking-scope .rankings-limit-body .btn-wrap .btn {
+            min-height: 60px;
+            padding: 20px 24px;
+            border-radius: 16px;
+            letter-spacing: .08em;
+            position: relative;
+            isolation: isolate;
+            transform: translateZ(0);
+            will-change: transform, filter, box-shadow;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow: hidden;
+        }
+
+        /* 常時パルスアニメーション（目を引く） */
+        #ranking-scope a.btn,
+        #ranking-scope .rankings-limit-body .btn-wrap .btn {
+            animation: cta_pulse 2.5s ease-in-out infinite;
+        }
+
+        @keyframes cta_pulse {
+            0%, 100% { 
+                transform: translateY(0) scale(1); 
+                box-shadow: 0 6px 0 #106a14, 0 10px 20px rgba(0, 0, 0, 0.15);
+            }
+            50% { 
+                transform: translateY(-3px) scale(1.02); 
+                box-shadow: 0 10px 0 #106a14, 0 16px 30px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        /* 赤ボタン用パルス */
+        #ranking-scope .rankings-limit-body .btn-wrap .btn {
+            animation: cta_pulse_red 2.5s ease-in-out infinite;
+        }
+
+        @keyframes cta_pulse_red {
+            0%, 100% { 
+                transform: translateY(0) scale(1); 
+                box-shadow: 0 6px 0 #b30908, 0 10px 20px rgba(0, 0, 0, 0.2);
+            }
+            50% { 
+                transform: translateY(-3px) scale(1.02); 
+                box-shadow: 0 10px 0 #b30908, 0 16px 30px rgba(179, 9, 8, 0.3);
+            }
+        }
+
+        /* ホバー時の派手なエフェクト */
+        #ranking-scope a.btn:hover,
+        #ranking-scope .rankings-limit-body .btn-wrap .btn:hover {
+            transform: translateY(-4px) scale(1.05) !important;
+            filter: brightness(1.1) saturate(1.2);
+            animation: none;
+        }
+
+        #ranking-scope a.btn:hover {
+            box-shadow: 0 12px 0 #106a14, 0 20px 40px rgba(94, 231, 106, 0.4) !important;
+        }
+
+        #ranking-scope .rankings-limit-body .btn-wrap .btn:hover {
+            box-shadow: 0 12px 0 #b30908, 0 20px 40px rgba(254, 61, 61, 0.4) !important;
+        }
+
+        /* クリック時の押し込み */
+        #ranking-scope a.btn:active,
+        #ranking-scope .rankings-limit-body .btn-wrap .btn:active {
+            transform: translateY(2px) scale(0.98) !important;
+            animation: none;
+        }
+
+        #ranking-scope a.btn:active {
+            box-shadow: 0 2px 0 #106a14, 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        #ranking-scope .rankings-limit-body .btn-wrap .btn:active {
+            box-shadow: 0 2px 0 #b30908, 0 4px 10px rgba(0, 0, 0, 0.2) !important;
+        }
+
+        /* シャインエフェクト（光が走る） */
+        #ranking-scope a.btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                120deg,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,0.3) 50%,
+                rgba(255,255,255,0) 100%
+            );
+            animation: btn_shine 3s ease-in-out infinite;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes btn_shine {
+            0% { left: -100%; }
+            50%, 100% { left: 100%; }
+        }
+
+        /* ピンクボタン（mamaru）の修正と改善 */
+        #ranking-scope a.btn-mamaru,
+        .btn-mamaru {
+            background-image: linear-gradient(0deg, #ff1493, #ff69b4 75%) !important;
+            border-bottom: 5px solid #c71585 !important;
+            animation: cta_pulse_pink 2.5s ease-in-out infinite;
+        }
+
+        @keyframes cta_pulse_pink {
+            0%, 100% { 
+                transform: translateY(0) scale(1); 
+                box-shadow: 0 6px 0 #c71585, 0 10px 20px rgba(255, 20, 147, 0.3);
+            }
+            50% { 
+                transform: translateY(-3px) scale(1.02); 
+                box-shadow: 0 10px 0 #c71585, 0 16px 30px rgba(255, 20, 147, 0.4);
+            }
+        }
+
+        #ranking-scope a.btn-mamaru:hover,
+        .btn-mamaru:hover {
+            box-shadow: 0 12px 0 #c71585, 0 20px 40px rgba(255, 20, 147, 0.5) !important;
+        }
+
+        /* フォーカス時のアウトライン（アクセシビリティ） */
+        #ranking-scope a.btn:focus-visible,
+        #ranking-scope .rankings-limit-body .btn-wrap .btn:focus-visible {
+            outline: 3px solid rgba(255, 255, 255, 0.9);
+            outline-offset: 4px;
+        }
+
+        /* 動きを嫌う人向け */
+        @media (prefers-reduced-motion: reduce) {
+            #ranking-scope a.btn,
+            #ranking-scope .rankings-limit-body .btn-wrap .btn,
+            #ranking-scope a.btn-mamaru {
+                animation: none !important;
+            }
+            #ranking-scope a.btn::before {
+                animation: none !important;
+            }
+        }
+
+        /* =====================================================
+           カード・テーブルの見やすさ改善
+           ===================================================== */
+        
+        /* カード全体の改善 */
+        #ranking-scope .rankings-limit-item {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            background: #fff;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            transition: box-shadow 0.3s ease, transform 0.3s ease;
+        }
+
+        #ranking-scope .rankings-limit-item:hover {
+            box-shadow: 0 16px 50px rgba(0, 0, 0, 0.12);
+            transform: translateY(-2px);
+        }
+
+        /* ヘッダー部分の改善 */
+        #ranking-scope .rankings-limit-head {
+            border-radius: 16px 16px 0 0;
+            padding: 0.8em 1.2em;
+        }
+
+        /* 本文エリアの改善 */
+        #ranking-scope .rankings-limit-body {
+            color: #333;
+            line-height: 1.75;
+            padding: 2em;
+        }
+
+        /* pinned（白い紙）の改善 */
+        #ranking-scope .pinned-paper {
+            border: 1px solid rgba(0, 0, 0, 0.06);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+            border-radius: 16px;
+            padding: 1.8em;
+            background: #fff;
+        }
+
+        /* テーブルの視認性改善 */
+        #ranking-scope .tableSearch__box {
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        #ranking-scope .tableSearch__box thead th {
+            letter-spacing: 0.05em;
+            padding: 1em 0.5em;
+            font-size: 0.9em;
+        }
+
+        #ranking-scope .tableSearch__box tbody td {
+            text-align: center;
+            padding: 1.2em 0.5em;
+            vertical-align: middle;
+        }
+
+        #ranking-scope .tableSearch__box tbody tr:nth-child(odd) td {
+            background: rgba(253, 129, 129, 0.03);
+        }
+
+        /* tbl-list（価格表）の改善 */
+        #ranking-scope .tbl-list {
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1.5em;
+        }
+
+        #ranking-scope .tbl-list th {
+            padding: 1em;
+            background-color: #f8f8f8;
+        }
+
+        #ranking-scope .tbl-list td {
+            padding: 1em;
+        }
+
+        /* ポイントリストの改善 */
+        #ranking-scope .pointlist__area {
+            margin-top: 1.5em;
+            padding: 1em;
+            background: rgba(164, 197, 32, 0.05);
+            border-radius: 12px;
+        }
+
+        #ranking-scope .pointlist__inner .items .item {
+            padding: 8px 0 8px 30px;
+            margin: 0.5em 0;
+            line-height: 1.6;
+        }
+
+        /* 口コミリンクの改善 */
+        #ranking-scope .review {
+            display: inline-block;
+            margin-top: 0.3em;
+            padding: 0.3em 0.8em;
+            background: #fd8181;
+            color: #fff !important;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        #ranking-scope .review:hover {
+            background: #e66b6b;
+            transform: scale(1.05);
+        }
+
+        /* 星評価の改善 */
+        #ranking-scope .star {
+            display: inline-block;
+            font-weight: 700;
+            color: #f5a623;
+            font-size: 1.1em;
+        }
+
+        #ranking-scope .star::before {
+            content: "★ ";
+        }
+
+        /* スマホ対応の改善 */
+        @media (max-width: 600px) {
+            #ranking-scope .rankings-limit-body {
+                padding: 1.2em;
+            }
+
+            #ranking-scope .pinned-paper {
+                padding: 1.2em;
+            }
+
+            #ranking-scope .tableSearch__area {
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #ranking-scope .tableSearch__box {
+                min-width: 480px;
+            }
+
+            #ranking-scope a.btn,
+            #ranking-scope .rankings-limit-body .btn-wrap .btn {
+                min-height: 54px;
+                padding: 16px 20px;
+                font-size: 14px;
+            }
+        }
+
+        /* pointbox__area（ヘッダー）の改善 */
+        .pointbox__area {
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(253, 129, 129, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pointbox__area:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(253, 129, 129, 0.4);
+        }
     </style>
     <style>
         .pointbox__area {
@@ -892,7 +1207,7 @@
                                                         </a>
                                                         <style>
                                                             .btn-mamaru {
-                                                                background-color: #ff1493above;
+                                                                background-color: #ff1493;
                                                                 /* ピンク色 */
                                                                 color: white;
                                                                 /* 文字色 */

@@ -844,7 +844,8 @@
         </div>
     </div>
 </div>
-
+<!-- mitas-leak-fix: wrap leaked content so it hides when mamaru tab is selected -->
+<div data-tab-content="mitas">
 <div style="max-width:480px; margin: 0 auto;">
     <img src="https://file.mysquadbeyond.com/uploads/article_photo/photo/5853836/ce926e00-7f00-4983-9689-8ca828555d8c.jpg" style="width:100%; margin-top:0.5rem; margin-bottom:0.5rem;" height="24" width="480" draggable="false" class="lazyload">
     <div style="width:100%; position:relative;">
@@ -2497,6 +2498,7 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 <!-- /mitas-leak-fix -->
 <font color="#ffffff">ミタス終わり

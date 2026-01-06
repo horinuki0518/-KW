@@ -2407,26 +2407,45 @@
 <font color="#ffffff">ミタス終わり
 </font>
 <p></p>
-<div data-tab-content="mamaru" style="width:100%; padding:1em; display:none;">
-    <p></p>
+<div data-tab-content="mamaru" style="width:100%; padding:1em; display:none; max-width:none !important;">
 <style>
-    /* mamaru section spacing fix */
+    /* ========================================
+       mamaru section comprehensive fixes
+       ======================================== */
+    
+    /* Fix 1: 横幅の問題 - mamaru全体を広げる */
+    div[data-tab-content="mamaru"] {
+        max-width: none !important;
+        width: 100% !important;
+    }
+    
+    /* Fix 3: 隙間の問題 - 余分なマージン/パディングを削除 */
+    div[data-tab-content="mamaru"] > p {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none !important;
+    }
     div[data-tab-content="mamaru"] .article-body {
-        margin-top: 0;
-        padding-top: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     div[data-tab-content="mamaru"] .sb-custom {
-        margin-top: 0;
-        padding-top: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
     div[data-tab-content="mamaru"] #kt-btn-scope {
-        margin-top: 0;
+        margin: 0 !important;
+        padding: 0 !important;
     }
-    /* mamaru section cream-box pink styling */
+    div[data-tab-content="mamaru"] #kt-btn-scope .btn-area {
+        margin: 0.5em 0 !important;
+    }
+    
+    /* Fix 4: 色の問題 - cream-boxを赤ピンク色に変更 */
     div[data-tab-content="mamaru"] .cream-box {
-        background: #FDF2F1;
-        border: 2px dashed #F3C4C0;
-        box-shadow: 0 0 14px rgba(243, 196, 192, 0.35);
+        background: #FDF2F1 !important;
+        border: 2px dashed #F3C4C0 !important;
+        box-shadow: 0 0 14px rgba(243, 196, 192, 0.35) !important;
     }
 </style>
 <div class="article-body">

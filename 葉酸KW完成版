@@ -2420,16 +2420,39 @@
     }
     
     /* Fix 3: 隙間の問題 - 余分なマージン/パディングを削除 */
-    div[data-tab-content="mamaru"] > p {
+    /* data-tabs直下の空pとfontを非表示（mitas/mamaruの間にある要素） */
+    div[data-tabs] > p:empty {
         margin: 0 !important;
         padding: 0 !important;
         display: none !important;
     }
+    div[data-tabs] > font {
+        display: none !important;
+    }
+    /* mamaru内の空pだけを非表示（:emptyで限定） */
+    div[data-tab-content="mamaru"] > p:empty {
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none !important;
+    }
+    /* wrapper要素のmargin/paddingをリセット */
     div[data-tab-content="mamaru"] .article-body {
         margin: 0 !important;
         padding: 0 !important;
     }
     div[data-tab-content="mamaru"] .sb-custom {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[data-tab-content="mamaru"] .sb-custom-part-mk132njmzb8nqwv29k9 {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[data-tab-content="mamaru"] div[draggable] {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    div[data-tab-content="mamaru"] span[contenteditable] {
         margin: 0 !important;
         padding: 0 !important;
     }
@@ -3696,6 +3719,8 @@
                 エレ詳細はこちら
             </a>
 </div></div>
+<!-- ▼ 横にスクロール画像（妊活中と同様） -->
+<img src="https://file.mysquadbeyond.com/uploads/article_photo/photo/5853836/ce926e00-7f00-4983-9689-8ca828555d8c.jpg" style="width:100%; margin-top:0.5rem; margin-bottom:0.5rem;" height="24" width="480" draggable="false" class="lazyload">
 <!-- ▼ 妊娠中（in）の下部比較表をそのまま残す --><div style="width:100%; margin-top:10px;"><div style="display:flex; width:100%;">
 <!-- 左側の縦長比較画像 --><div style="position:relative;">
 <img src="https://file.mysquadbeyond.com/lazy.png" width="146" height="604" style="max-width:none;" draggable="false" class="lazyload" data-src="https://file.mysquadbeyond.com/uploads/article_photo/photo/6028481/3c2c245c-e3cf-45c1-a079-b73fe0f71711.png"><a href="https://example.com" style="display:block; background-color:transparent; position:absolute; top:21%; left:53%; width:38%; height:3%; text-decoration:none; color:transparent;" draggable="false">

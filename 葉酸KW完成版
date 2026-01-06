@@ -2409,7 +2409,26 @@
 <p></p>
 <div data-tab-content="mamaru" style="width:100%; padding:1em; display:none;">
     <p></p>
-    
+<style>
+    /* mamaru section spacing fix */
+    div[data-tab-content="mamaru"] .article-body {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    div[data-tab-content="mamaru"] .sb-custom {
+        margin-top: 0;
+        padding-top: 0;
+    }
+    div[data-tab-content="mamaru"] #kt-btn-scope {
+        margin-top: 0;
+    }
+    /* mamaru section cream-box pink styling */
+    div[data-tab-content="mamaru"] .cream-box {
+        background: #FDF2F1;
+        border: 2px dashed #F3C4C0;
+        box-shadow: 0 0 14px rgba(243, 196, 192, 0.35);
+    }
+</style>
 <div class="article-body">
 <div draggable="false" class=""><div class="sb-custom"><span contenteditable="false"><div id="sb-part-17394" class="sb-custom-part-mk132njmzb8nqwv29k9">
 <!-- ====== ここから丸ごとコピペで張替えOK（中身そのまま・完全スコープ） ====== -->
@@ -2478,7 +2497,7 @@
   </style>
 
   <!-- ▼▼▼ ここから下は【ユーザーのHTMLを一切変更していない】 ▼▼▼ --><div class="btn-area">
-<!--下記ooooo部分にリンク先URLを置いてください。もしくは左に表示のボタンテキストを選択した後に上部のリンクボタンから追加--><a href="#mts1%E4%BD%8D" class="btn" draggable="false"><font color="#ffffff">早速ランキング<br>1位を確認する</font></a>
+<!--下記ooooo部分にリンク先URLを置いてください。もしくは左に表示のボタンテキストを選択した後に上部のリンクボタンから追加--><a href="#mmr1%E4%BD%8D" class="btn" draggable="false"><font color="#ffffff">早速ランキング<br>1位を確認する</font></a>
 </div>
 <!-- ▲▲▲ 中身完全そのまま ▲▲▲ -->
 
@@ -3642,9 +3661,9 @@
 <picture><source type="image/webp" data-srcset="https://file.mysquadbeyond.com/uploads/article_photo/photo/6028144/edbb346c-f292-4cdf-87e7-4f16223c460f.webp"><source type="image/avif" data-srcset="https://file.mysquadbeyond.com/uploads/article_photo/photo/6028144/edbb346c-f292-4cdf-87e7-4f16223c460f.avif"><img src="https://file.mysquadbeyond.com/lazy.png" class="lazyload" height="315" width="590" data-src="https://file.mysquadbeyond.com/uploads/article_photo/photo/6028144/edbb346c-f292-4cdf-87e7-4f16223c460f.jpg"></source></source></picture>
 </div>
 <div><div class="sb-custom"><span contenteditable="false"><div id="sb-part-16737" class="sb-custom-part-mjmwxchea9p77qony3">
-<div id="mts1位"></div>
+<div id="mmr1位"></div>
 
-<div style="max-width:480px; margin: 0 auto;">
+<div style="width:100%; margin: 0 auto;">
 <!-- ▼ 妊娠中（in）の上部画像だけ表示 --><div style="width:100%;"><div style="width:100%; position:relative;">
 <img src="https://file.mysquadbeyond.com/lazy.png" style="width:100%; height:auto;" draggable="false" class="lazyload" height="704" width="480" data-src="https://file.mysquadbeyond.com/uploads/article_photo/photo/5853782/7419e04f-1268-43c4-8322-7b5c068bb055.jpg"><img src="https://file.mysquadbeyond.com/lazy.png" style="--tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / .5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ;" height="254" width="480" draggable="false" class="lazyload" data-src="https://file.mysquadbeyond.com/uploads/article_photo/photo/6028239/b7ab07ef-0f8d-43c5-baeb-4dd9e0606178.jpg"><a href="https://example.com" style="display:block; background-color:transparent; position:absolute; top:39%; left:55%; width:22%; height:4%; text-decoration:none; color:transparent;" draggable="false">
                 ママ詳細はこちら

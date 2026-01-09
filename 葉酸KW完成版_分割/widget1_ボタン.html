@@ -1,0 +1,54 @@
+<!-- ウィジェット1: 切り替えボタン + CSS + JavaScript -->
+<!-- このウィジェットを最初に配置してください -->
+
+<div data-tabs="" style="max-width:480px; margin: 0 auto; text-align:center;">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:16px;">
+        <button data-tab-trigger="mitas" class="tab-btn mitas-btn">
+            <span style="font-size: 17px;" class="sb-fs-free">妊活中の方は</span><br>
+            <span style="font-size: 17px;" class="sb-fs-free">コチラ！</span>
+        </button>
+        <button data-tab-trigger="mamaru" class="tab-btn mamaru-btn">
+            <span style="font-size: 17px;" class="sb-fs-free">妊娠中の方は</span><br>
+            <span style="font-size: 17px;" class="sb-fs-free">コチラ！</span>
+        </button>
+    </div>
+</div>
+
+<style>
+.tab-btn{width:100%;border:none;font-size:16px;font-weight:600;line-height:1.4;padding:14px 0;cursor:pointer;color:#fff;transition:transform 0.2s ease;border-radius:50px;box-shadow:0 3px 6px rgba(0,0,0,0.12);white-space:normal;}
+.mitas-btn{background:linear-gradient(135deg,#ffb893,#ff9966);}
+.mitas-btn.inactive{background:#ffe0ca;color:#666;animation:none;}
+.mamaru-btn{background:linear-gradient(135deg,#ff7da8,#ff4f88);}
+.mamaru-btn.inactive{background:#ffd4e1;color:#666;animation:none;}
+@keyframes pulseGlow{0%{box-shadow:0 0 8px rgba(255,255,255,0.3);transform:scale(1);}50%{box-shadow:0 0 20px rgba(255,255,255,0.9),0 0 40px rgba(255,255,255,0.6);transform:scale(1.04);}100%{box-shadow:0 0 8px rgba(255,255,255,0.3);transform:scale(1);}}
+.tab-btn:not(.inactive){animation:pulseGlow 1.8s ease-in-out infinite;}
+.tab-btn:active{transform:scale(0.97);}
+</style>
+
+<script>
+(function() {
+    function showTab(target) {
+        // ボタン active/inactive
+        document.querySelectorAll("[data-tab-trigger]").forEach((btn) => {
+            const on = btn.dataset.tabTrigger === target;
+            btn.classList.toggle("active", on);
+            btn.classList.toggle("inactive", !on);
+        });
+
+        // コンテンツ（同じtab名が複数あっても全部切替）
+        document.querySelectorAll("[data-tab-content]").forEach((area) => {
+            area.style.display = (area.dataset.tabContent === target) ? "block" : "none";
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        // クリックで切替
+        document.querySelectorAll("[data-tab-trigger]").forEach((btn) => {
+            btn.addEventListener("click", () => showTab(btn.dataset.tabTrigger));
+        });
+
+        // 初期表示
+        showTab("mitas");
+    });
+})();
+</script>

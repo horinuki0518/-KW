@@ -3,7 +3,52 @@
 <!-- このファイルは3番目に配置してください       -->
 <!-- ========================================== -->
 
-<div data-tab-content="mamaru" style="width:100%; padding:1em; display:none; max-width:480px; margin:0 auto; text-align:center;">
+<!-- 5項目セクション（widget-container）の修正CSS -->
+<style>
+/* widget-containerを中央寄せ＆幅を最大化 */
+.widget-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    box-sizing: border-box !important;
+    padding: 10px !important;
+}
+/* 白い部分（item-inner）のパディングを最小化してコンテンツをめいっぱい広げる */
+.contents-item .item-inner {
+    padding: 0.5em !important;
+}
+/* contentsのパディングを最小化してコンテンツエリアを広く */
+.contents {
+    padding: 0.25em !important;
+}
+/* contents-itemの幅を最大化 */
+.contents-item {
+    width: 100% !important;
+    box-sizing: border-box !important;
+}
+/* 白い部分の中の画像を隙間なく広げる */
+.contents-item .item-inner img,
+.contents-item .item-inner picture img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+/* 白い部分の中のテキストの余白を最小化 */
+.contents-item .item-inner p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+/* inner-commentの余白を削除 */
+.contents-item .item-inner .inner-comment {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+</style>
+
+<div data-tab-content="mamaru"style="width:100%; padding:1em; display:none; max-width:480px; margin:0 auto; text-align:center;">
 
 <!-- ============================================ -->
 <!-- ↓↓↓ ここから妊娠中（mamaru）のLP内容を貼り付け ↓↓↓ -->

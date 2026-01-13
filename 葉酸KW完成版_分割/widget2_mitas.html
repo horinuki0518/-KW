@@ -5,6 +5,11 @@
 
 <!-- レイアウト修正CSS -->
 <style>
+/* コンテナとすべての子要素にborder-boxを適用（オーバーフロー防止） */
+[data-tab-content="mitas"],
+[data-tab-content="mitas"] * {
+    box-sizing: border-box;
+}
 /* 長文テキストを左揃えに */
 [data-tab-content="mitas"] .cream-box p {
     text-align: left;
@@ -20,9 +25,19 @@
     height: auto;
     display: inline-block;
 }
+/* テーブルのオーバーフロー防止 */
+[data-tab-content="mitas"] table {
+    width: 100%;
+    max-width: 100%;
+    table-layout: fixed;
+}
+/* すべての子要素の最大幅を制限 */
+[data-tab-content="mitas"] > * {
+    max-width: 100%;
+}
 </style>
 
-<div data-tab-content="mitas" style="width:100%; padding:1em; text-align:center; max-width:480px; margin:0 auto;">
+<div data-tab-content="mitas" style="width:100%; padding:1em; text-align:center; max-width:480px; margin:0 auto; box-sizing:border-box;">
 
 <!-- ============================================ -->
 <!-- ↓↓↓ ここから妊活中（mitas）のLP内容を貼り付け ↓↓↓ -->

@@ -14,9 +14,9 @@
     box-sizing: border-box !important;
     padding: 10px !important;
 }
-/* 白い部分（item-inner）のパディングを大きくしてコンテンツを広く */
+/* 白い部分（item-inner）のパディングを最小化してコンテンツをめいっぱい広げる */
 .contents-item .item-inner {
-    padding: 2em !important;
+    padding: 0.5em !important;
 }
 /* contentsのパディングを最小化してコンテンツエリアを広く */
 .contents {
@@ -26,6 +26,25 @@
 .contents-item {
     width: 100% !important;
     box-sizing: border-box !important;
+}
+/* 白い部分の中の画像を隙間なく広げる */
+.contents-item .item-inner img,
+.contents-item .item-inner picture img {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    display: block !important;
+}
+/* 白い部分の中のテキストの余白を最小化 */
+.contents-item .item-inner p {
+    margin: 0.5em 0 !important;
+    padding: 0 !important;
+}
+/* inner-commentの余白を削除 */
+.contents-item .item-inner .inner-comment {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 </style>
 

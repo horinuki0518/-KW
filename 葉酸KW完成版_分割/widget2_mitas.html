@@ -3,6 +3,25 @@
 <!-- このファイルは2番目に配置してください       -->
 <!-- ========================================== -->
 
+<!-- 5項目セクション（widget-container）の修正CSS -->
+<style>
+/* widget-containerを中央寄せ＆幅を広く */
+[data-tab-content="mitas"] .widget-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+/* 白い部分（item-inner）のパディングを調整して広く */
+[data-tab-content="mitas"] .contents-item .item-inner {
+    padding: 1.5em !important;
+}
+/* contentsのパディングを減らして広く */
+[data-tab-content="mitas"] .contents {
+    padding: 0.5em !important;
+}
+</style>
+
 <div data-tab-content="mitas" style="width:100%;">
 
 <!-- ============================================ -->
